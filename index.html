@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Glass</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    /* Базовый сброс и стили */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    
+    /* Фиксированный заголовок */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    header .logo { height: 50px; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 30px; }
+    nav ul li a { font-weight: 700; color: #fff; transition: color 0.3s; }
+    nav ul li a:hover { color: #007BFF; }
+    
+    /* Hero секция */
+    .hero {
+      height: 100vh;
+      background: url('заставка.jpeg.jpeg') center center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; top: 0; left: 0;
+      right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero h1 {
+      position: relative;
+      font-size: 3rem;
+      z-index: 1;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    /* Контейнер для выравнивания содержимого */
+    .container { max-width: 1200px; margin: auto; padding: 100px 40px; }
+    
+    /* Общие стили секций */
+    section { padding: 60px 0; }
+    h2 { font-size: 2.5rem; margin-bottom: 20px; color: #007BFF; text-transform: uppercase; }
+    h3 { font-size: 2rem; margin: 40px 0 20px; color: #007BFF; text-transform: uppercase; }
+    p { font-size: 1.1rem; margin-bottom: 20px; }
+    
+    /* Specificity секция */
+    .specificity {
+      background: #222;
+      padding: 40px;
+      border-radius: 5px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .specificity img { max-width: 100%; height: auto; border-radius: 5px; }
+    .specificity .caption { margin-top: 20px; font-size: 0.95rem; line-height: 1.5; text-align: left; }
+    
+    /* Project Grid и карточки */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: #222;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .project-card:hover { transform: translateY(-10px); }
+    .project-card img { width: 100%; display: block; }
+    .project-card .info { padding: 20px; }
+    .project-card .info h3 { font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase; }
+    .project-card .info .caption { font-size: 0.9rem; line-height: 1.4; }
+    
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      header { padding: 20px; }
+      nav ul li { margin-left: 15px; }
+      .hero h1 { font-size: 2.2rem; }
+      .container { padding: 80px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Фиксированный заголовок с логотипом -->
+  <header>
+    <img src="логотип.jpeg.jpeg" alt="Mega Glass Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#specificity">Works</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero секция -->
+  <section class="hero" id="hero">
+    <h1>Your Experts in Glass & Glazing</h1>
+  </section>
+  
+  <div class="container">
+    <!-- About секция -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Established in April 2022, Mega Glass is a Limited Liability Company based in Vienna, VA. We specialize in glass and glazing contracting, fire-rated doors, and rail systems for residential and commercial projects.</p>
+    </section>
+    
+    <!-- Specificity секция (третья фотография) -->
+    <section id="specificity" class="specificity">
+      <img src="specificity.jpeg.jpeg" alt="Specificity of Works">
+      <div class="caption">
+        <p><strong>Specificity of Works Performed by Mega Glass:</strong></p>
+        <p>Glass and glazing works require:</p>
+        <ul style="list-style: disc; margin-left: 20px; text-align: left;">
+          <li>Precise measurements, cutting, and fitting</li>
+          <li>Ability to read the design documentation (technical education is of the essence)</li>
+          <li>Capacity of addressing challenges such as uneven surfaces, structural considerations, and weatherproofing requirements to maintain energy efficiency and protect against external elements</li>
+          <li>Engineering way of thinking (analytical, problem-solving, systematic and technical approach)</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Projects секция с разделением -->
+    <section id="projects">
+      <h2>Our Projects</h2>
+      
+      <!-- Accomplished Projects -->
+      <h3>Accomplished Projects</h3>
+      <div class="project-grid">
+        <!-- Silver Diner -->
+        <div class="project-card">
+          <img src="silver diner.jpeg.jpeg" alt="Silver Diner">
+          <div class="info">
+            <h3>Silver Diner – Loudoun Crossroads</h3>
+            <div class="caption">
+              <p>(Chantilly, VA) – Year: 2023</p>
+              <p>Supply and installation of YKK exterior aluminum windows;<br>
+              Installation of glass doors with bottom rails;<br>
+              Clear anodized finishing.</p>
+            </div>
+          </div>
+        </div>
+        <!-- University of Florida -->
+        <div class="project-card">
+          <img src="university of florida.png.png" alt="University of Florida">
+          <div class="info">
+            <h3>University of Florida</h3>
+            <div class="caption">
+              <p>(Gainesville, FL) – Year: 2023</p>
+              <p>Installation of interior glass and guardrails:<br>
+              • Direct Fix Balustrade System;<br>
+              • Nanorail® Handrail components.</p>
+            </div>
+          </div>
+        </div>
+        <!-- St Joseph's Nursing Home -->
+        <div class="project-card">
+          <img src="st joseph's.jpeg.jpeg" alt="St Joseph's Nursing Home">
+          <div class="info">
+            <h3>St Joseph's Nursing Home</h3>
+            <div class="caption">
+              <p>(Emmitsburg, MD) – Year: 2023</p>
+              <p>Supply and installation of SAFTI FIRST Fire Rated doors;<br>
+              PPG CORAFLON Finish.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Pinnacle Towers -->
+        <div class="project-card">
+          <img src="pinnacle towers.jpeg.jpeg" alt="Pinnacle Towers">
+          <div class="info">
+            <h3>Pinnacle Towers</h3>
+            <div class="caption">
+              <p>(McLean, VA) – Year: 2023</p>
+              <p>Supply and Installation of Aluminum Framed Storefront Elevations;<br>
+              Black Anodized Finish.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Shake Shack Pike -->
+        <div class="project-card">
+          <img src="shake shack.jpeg.jpeg" alt="Shake Shack Pike">
+          <div class="info">
+            <h3>Shake Shack Pike</h3>
+            <div class="caption">
+              <p>(Vienna, VA)</p>
+              <p>Supply and installation of external Kawneer Trifab 451 T VersaGlaze;<br>
+              Supply and Installation of Aluminum Storefronts with black anodized finish;<br>
+              Supply and installation of exterior doors with Vision and LED Backlit Mirrors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Projects in Progress -->
+      <h3>Projects in Progress</h3>
+      <div class="project-grid">
+        <!-- Hen Quarter Restaurant – Riverpoint -->
+        <div class="project-card">
+          <!-- Если есть собственное изображение, замените "hen quarter.jpeg" -->
+          <img src="hen quarter.jpeg.jpeg" alt="Hen Quarter Restaurant – Riverpoint">
+          <div class="info">
+            <h3>Hen Quarter Restaurant – Riverpoint</h3>
+            <div class="caption">
+              <p>(Washington, DC)</p>
+              <p>Supply and installation of exterior aluminum storefronts and curtain walls;<br>
+              Supply and installation of interior frameless glass doors;<br>
+              Supply and installation of clear tempered glass doors with sidelites;<br>
+              Supply and installation of low iron windows at backbar divider wall.</p>
+            </div>
+          </div>
+        </div>
+        <!-- One Life Fitness -->
+        <div class="project-card">
+          <img src="one life fitness.jpeg.jpeg" alt="One Life Fitness – Tenleytown">
+          <div class="info">
+            <h3>One Life Fitness – Tenleytown</h3>
+            <div class="caption">
+              <p>(Washington, DC)</p>
+              <p>Supply and installation of YKK AP Aluminum Storefront;<br>
+              Supply and installation of glass doors with aluminium frames.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Upcoming Projects -->
+      <h3>Upcoming Projects</h3>
+      <div class="project-grid">
+        <!-- Upcoming Projects card -->
+        <div class="project-card">
+          <img src="upcoming projects.jpeg.jpeg" alt="Upcoming Projects">
+          <div class="info">
+            <h3>Upcoming Projects</h3>
+            <div class="caption">
+              <p>Academy Sports – Beckley, WV:<br>
+              Supply and installation of exterior and interior windows, and glass doors.<br>
+              AKA Alexandria Hotel, VA:<br>
+              Supply and installation of interior glass doors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact секция -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>8466-A Tyco Road, Vienna, VA 22182</p>
+      <p>Tel: 703 445 4005</p>
+      <!-- Встроенная Google Map (замените YOUR_API_KEY на реальный ключ) -->
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=8466-A+Tyco+Road,+Vienna,+VA+22182" height="300"></iframe>
+    </section>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Mega Glass. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
